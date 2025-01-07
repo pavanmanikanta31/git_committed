@@ -1,0 +1,22 @@
+name: Daily Git Commit Automation
+
+on:
+  schedule:
+    - cron: '0 10 * * *'  # Runs daily at 10:00 AM UTC
+  workflow_dispatch:  # Allows manual triggering if needed
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python 3.10
+        uses: actions/setup-python@v3
+        with:
+          python-version: "3.10"
+      - name: Run Git Commit Script
+        run: |
+          python git_committed.py
