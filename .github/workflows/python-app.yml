@@ -27,3 +27,9 @@ jobs:
       - name: Run Git Commit Script
         run: |
           python git_committed.py
+
+      - name: Push Changes
+        run: |
+          git add .
+          git commit -m "Automated commit by GitHub Actions"
+          git push
