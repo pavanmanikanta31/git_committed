@@ -2,7 +2,7 @@ name: Git Commit Automation
 
 on:
   schedule:
-    - cron: '0 0 1 * *' 
+    - cron: '0 0 1 * *'  # Runs at 12:00 AM UTC on the 1st of every month
   workflow_dispatch:  # Allows manual triggering if needed
 
 permissions:
@@ -28,8 +28,8 @@ jobs:
 
       - name: Configure Git Identity
         run: |
-          git config --global user.name "GitHub Actions Bot"
-          git config --global user.email "actions@github.com"
+          git config --global user.name "Pavan Maddula"
+          git config --global user.email "pavan3196m@gmail.com"
 
       - name: Run Git Commit Script
         run: |
