@@ -24,7 +24,7 @@ jobs:
           mkdir -p ~/.ssh
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_ed25519
           chmod 600 ~/.ssh/id_ed25519
-          ssh-keyscan github.com >> ~/.ssh/known_hosts
+          ssh-keyscan -H github.com >> ~/.ssh/known_hosts
 
       - name: Configure Git Identity
         run: |
@@ -39,4 +39,4 @@ jobs:
         run: |
           git add .
           git commit -m "Automated commit by GitHub Actions" || echo "No changes to commit."
-          git push git@github.com:pavanmanikanta31/git_committed.git || echo "No changes to push."
+          GIT_SSH_COMMAND="ssh -i ~/.ssh/id_ed25519 -o IdentitiesOnly=yes" git push git@github.com:pavanmanikanta31/git_committed.git || echo "No changes to push."
