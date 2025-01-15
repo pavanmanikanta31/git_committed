@@ -28,8 +28,8 @@ jobs:
 
       - name: Configure Git Identity
         run: |
-          git config --global user.name "Pavan Maddula"
-          git config --global user.email "pavan3196m@gmail.com"
+          git config --global user.name "Pavan Manikanta Maddula"
+          git config --global user.email "85855555+pavanmanikanta31@users.noreply.github.com"
 
       - name: Run Git Commit Script
         run: |
