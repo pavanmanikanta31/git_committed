@@ -1,4 +1,4 @@
-name: Daily Git Commit Automation
+name: Git Commit Automation
 
 on:
   schedule:
