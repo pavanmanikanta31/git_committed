@@ -38,5 +38,5 @@ jobs:
       - name: Push Changes
         run: |
           git add .
-          git commit -m "Automated commit by GitHub Actions"
-          git push git@github.com:pavanmanikanta31/git_committed.git
+          git commit -m "Automated commit by GitHub Actions" || echo "No changes to commit."
+          git push git@github.com:pavanmanikanta31/git_committed.git || echo "No changes to push."
